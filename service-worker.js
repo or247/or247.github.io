@@ -11,6 +11,7 @@ this.addEventListener('install', event => {
     caches.open(currentCache.offline).then(function(cache) {
       return cache.addAll([
           './img/offline.svg',
+          './video/windows_95_launch.mp4',
           offlineUrl
       ]);
     })
