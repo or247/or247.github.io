@@ -4,9 +4,50 @@
   <meta charset="UTF-8">
   <title>Home Page</title>
 	 <style>
+		 body {
+			 background-color: #000;
+		 }
+
 		 p {
 			 font-size: 24px;
 			 font-family: sans-serif;
+			 color: #fff;
+		 }
+
+		 .cover {
+			 position: absolute;
+			 width: 100%;
+			 height: 100%;
+			 background-position: center;
+			 background-repeat: no-repeat;
+			 background-color: #fff;
+			 top: 0;
+			 left: 0;
+		 }
+
+		 .cover.remove {
+			 animation: zoomOut 2s 1s both;
+		 }
+
+		 /*.slide-out-fwd-center {*/
+			 /*animation: slide-out-fwd-center 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;*/
+		 /*}*/
+
+
+		 @keyframes zoomOut {
+			 from {
+				 opacity: 1;
+			 }
+
+			 50% {
+				 opacity: 0;
+				 -webkit-transform: scale3d(0.3, 0.3, 0.3);
+				 transform: scale3d(0.3, 0.3, 0.3);
+			 }
+
+			 to {
+				 opacity: 0;
+			 }
 		 }
 	 </style>
  </head>
@@ -15,10 +56,19 @@
      <img src="./img/offline.svg" width="120" height="120" />
      <p>You are offline. But you can load this page. You can still watch this video.</p>
      <p>How is this even possible?? Find out next time... (it's a lot harder than you'd think)</p>
-	 <video width="320" height="240" controls>
-		   <source src="./video/windows_95_launch.mp4" type="video/mp4">
-		   Your browser does not support the video tag.
-	  </video>
+	 <!--<video width="320" height="240" controls>-->
+		   <!--<source src="./video/windows_95_launch.mp4" type="video/mp4">-->
+		   <!--Your browser does not support the video tag.-->
+	  <!--</video>-->
    </div>
+ 	<div class="cover" style="background-image: url(./img/no-connection.png)"></div>
+	 <script>
+		 document.addEventListener('DOMContentLoaded', function(){
+
+			var cover = document.querySelector(".cover");
+			cover.classList.add('remove');
+
+		 }, false);
+	 </script>
   </body>
 </html>
