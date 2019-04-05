@@ -7,12 +7,31 @@
  <body>
    <div style="text-align:center; margin-top:40px;">
      <img src="./img/online.svg" width="120" height="120" />
-		 <p style="font-size:22px;">Nice! You are currently online v5.</p> <p>Now go offline and refresh this page...</p>
+		 <p style="font-size:22px;">Nice! You are currently online v6.</p> <p>Now go offline and refresh this page...</p>
+	   <p class="offline-ready" style="display: none;">Offline ready!</p>
+	   <video width="320" height="240" controls>
+	   <source src="./video/windows_95_launch.mp4" type="video/mp4">
+	   Your browser does not support the video tag.
+	   </video>
    </div>
 	<script>
 		// Register the service worker
 		if ('serviceWorker' in navigator) {
-			navigator.serviceWorker.register('./service-worker.js');
+			navigator.serviceWorker.register('./service-worker-sameindex.js').then(function(registration) {
+				// Registration was successful
+
+				var newWorker = registration.installing;
+
+				// statechange fires every time the ServiceWorker.state changes
+				newWorker.onstatechange = function() {
+					// show the message on activation
+					if (newWorker.state == 'activated' && !navigator.serviceWorker.controller) {
+						document.querySelector('.offline-ready').removeAttribute("style")
+					}
+				};
+			}).catch(function(err) {
+				// registration failed :(
+			});
 		}
 	</script>
   </body>
