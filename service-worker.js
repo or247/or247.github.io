@@ -15,13 +15,11 @@
 
 // Incrementing CACHE_VERSION will kick off the install event and force previously cached
 // resources to be cached again.
-const CACHE_VERSION = 3;
+const CACHE_VERSION = 4;
 let CURRENT_CACHES = {
 	offline: 'offline-v' + CACHE_VERSION
 };
 const OFFLINE_URL = 'offline-page.html';
-const PNG = './img/offline.svg';
-//const VIDEO = './video/windows_95_launch.mp4';
 
 function createCacheBustedRequest(url) {
 	let request = new Request(url, {cache: 'reload'});
@@ -45,11 +43,6 @@ self.addEventListener('install', event => {
 	fetch(createCacheBustedRequest(OFFLINE_URL)).then(function(response) {
 		return caches.open(CURRENT_CACHES.offline).then(function(cache) {
 			return cache.put(OFFLINE_URL, response);
-		});
-	})
-	fetch(createCacheBustedRequest(PNG)).then(function(response) {
-		return caches.open(CURRENT_CACHES.offline).then(function(cache) {
-			return cache.put(PNG, response);
 		});
 	})
 );
@@ -111,7 +104,7 @@ self.addEventListener('fetch', event => {
 
 // 'use strict';
 //
-// var cacheVersion = 2;
+// var cacheVersion = 3;
 // var currentCache = {
 //   offline: 'offline-cache' + cacheVersion
 // };
@@ -122,7 +115,7 @@ self.addEventListener('fetch', event => {
 //     caches.open(currentCache.offline).then(function(cache) {
 //       return cache.addAll([
 //           './img/offline.svg',
-// 		  		'./video/windows_95_launch.mp4',
+// 		  './video/windows_95_launch.mp4',
 //           offlineUrl
 //       ]);
 //     })
