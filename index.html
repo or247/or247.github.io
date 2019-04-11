@@ -4,26 +4,30 @@
   <meta charset="UTF-8">
   <title>Home Page</title>
 	 <style>
+		 body {
+			 background: #000;
+			 display:flex; flex-direction: column; justify-content: center; align-items: center;
+		 }
+
 		 p {
-			 font-size: 24px;
-			font-family: sans-serif;
+			 font-size: 32px;
+			 font-family: sans-serif;
+			 color: #fff;
+			 font-weight: 500;
+		 }
+
+		 .container {
+			 text-align:center; margin-top:40px; max-width: 50vw;;
 		 }
 	 </style>
  </head>
  <body>
-   <div style="text-align:center; margin-top:40px;">
+   <div class="container">
      <img src="./img/online.svg" width="120" height="120" />
-		 <p style="font-size:22px;">Nice! You are currently online.</p> <p>Now go offline and refresh this page...</p>
-	   <!--<video width="320" height="240" controls>-->
-	   <!--<source src="./video/windows_95_launch.mp4" type="video/mp4">-->
-	   <!--Your browser does not support the video tag.-->
-	   <!--</video>-->
-	   <!--<div id="status"></div>-->
-	   <!--<div id="log"></div>-->
-	   <video width="320" height="240" controls>
-		   <source src="./video/windows_95_launch.mp4" type="video/mp4">
-		   Your browser does not support the video tag.
-	   </video>
+	   <p>Hi. Welcome to a small side-project.</p>
+	   <p>This is a demo of how offline sites can now be be used via the service worker API, available in a good browsers.</p>
+	   <p>Now go offline and refresh this page...</p>
+
    </div>
    <script src="./upup.min.js"></script>
    <script>

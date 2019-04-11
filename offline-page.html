@@ -3,13 +3,13 @@
  <head>
   <meta charset="UTF-8">
   <title>Home Page</title>
+	 <link type="text/css" rel="stylesheet" href="./css/gen.css"></link>
 	 <style>
 		 body {
 			 background-color: #000;
 		 }
 
-		 p {
-			 font-size: 24px;
+		 p, li {
 			 font-family: sans-serif;
 			 color: #fff;
 		 }
@@ -23,50 +23,76 @@
 			 background-color: #fff;
 			 top: 0;
 			 left: 0;
+			 font-family: sans-serif;
+			 color: black;
+			 display: flex;
+			 flex-direction:colum;
+			 justify-content: center;
+			 align-items: center;
 		 }
 
-		 .cover.remove {
-			 animation: zoomOut 2s 1s both;
+		 .cover h1 {
+			 font-size: 28px;
+			 font-weight: 500;
+			 text-size-adjust: 100%;
+			 /*animation: fontgrow 1.5s infinite linear alternate-reverse;*/
 		 }
 
-		 /*.slide-out-fwd-center {*/
-			 /*animation: slide-out-fwd-center 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;*/
-		 /*}*/
-
-
-		 @keyframes zoomOut {
-			 from {
-				 opacity: 1;
-			 }
-
-			 50% {
-				 opacity: 0;
-				 -webkit-transform: scale3d(0.3, 0.3, 0.3);
-				 transform: scale3d(0.3, 0.3, 0.3);
-			 }
-
-			 to {
-				 opacity: 0;
-			 }
+		 .cover p, .cover li{
+			 color: black;
+			 font-size: 15px;
 		 }
+
+		.cover li{
+			padding-bottom: 4px;
+		 }
+
+		.cover li a {
+			color: #117adb;
+			text-decoration: none;
+		}
+
+		 .error-code {
+			 font-size: 12px;
+			 color:#646464;
+		 }
+
 	 </style>
  </head>
  <body>
    <div style="text-align:center; margin-top:40px;">
-     <img src="./img/offline.svg" width="120" height="120" />
+     <img class="glitch" src="./img/offline.svg" width="120" height="120" />
      <p>You are offline. But you can load this page. You can still watch this video.</p>
      <p>How is this even possible?? Find out next time... (it's a lot harder than you'd think)</p>
-	 <!--<video width="320" height="240" controls>-->
-		   <!--<source src="./video/windows_95_launch.mp4" type="video/mp4">-->
-		   <!--Your browser does not support the video tag.-->
-	  <!--</video>-->
    </div>
- 	<div class="cover" style="background-image: url(./img/no-connection.png)"></div>
+ 	<div class="cover">
+		<div>
+			<div class="dino">
+				<img src="./img/dino-trans.png"/>
+				<img src="./img/dino-trans-red.png"/>
+				<img src="./img/dino-trans.png"/>
+			</div>
+			<h1 class="glitch-one" data-text="No internet">No internet</h1>
+			<p class="glitch-two" data-text="Try">Try:</p>
+			<ul>
+				<li class="glitch-three" data-text="Checking the network cables, modem and router">Checking the network cables, modem and router</li>
+				<li class="glitch-four" data-text="Reconnecting to Wi-Fi">Reconnecting to Wi-Fi</li>
+				<li><a class="glitch-five" data-text="Running Windows Network Diagnostics" href="#">Running Windows Network Diagnostics</a></li>
+			</ul>
+			<div class="error-code glitch-six" data-text="ERR_INTERNET_DISCONNECTED">ERR_INTERNET_DISCONNECTED</div>
+		</div>
+
+	</div>
+
+
+
+
+
 	 <script>
 		 document.addEventListener('DOMContentLoaded', function(){
 
-			var cover = document.querySelector(".cover");
-			cover.classList.add('remove');
+//			var cover = document.querySelector(".cover");
+//			cover.classList.add('remove');
 
 		 }, false);
 	 </script>
