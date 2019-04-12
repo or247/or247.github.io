@@ -10,24 +10,32 @@
 		 }
 
 		 p {
-			 font-size: 32px;
+			 font-size: 26px;
 			 font-family: sans-serif;
 			 color: #fff;
 			 font-weight: 500;
 		 }
 
+		 p span {
+			 font-size: 40px;
+			 text-decoration: underline;
+		 }
+
+		 img {
+			 margin: 30px 0;
+		 }
+
 		 .container {
-			 text-align:center; margin-top:40px; max-width: 50vw;;
+			 text-align:center; margin-top:40px; max-width: 40vw;
 		 }
 	 </style>
  </head>
  <body>
    <div class="container">
-     <img src="./img/online.svg" width="120" height="120" />
-	   <p>Hi. Welcome to a small side-project.</p>
-	   <p>This is a demo of how offline sites can now be be used via the service worker API, available in a good browsers.</p>
+	   <p>Hi. Offline sites, why are they good, how is it even possible?</p>
+	   <p>Scan the QR code or open <span>https://or247.github.io</span> on your phone to find out.</p>
+	   <p><img src="./img/qr.png" /></p>
 	   <p>Now go offline and refresh this page...</p>
-
    </div>
    <script src="./upup.min.js"></script>
    <script>

@@ -180,6 +180,10 @@
 	position: relative;
 	height: 61px;
 	top: 0;
+
+	&.glitching {
+		@include imgGlitch("dino", 15, 80, 61, 0, 0);
+	}
 }
 
 

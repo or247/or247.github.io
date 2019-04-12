@@ -7,7 +7,29 @@
 	 <style>
 		 body {
 			 background-color: #000;
+			 min-height: 100vh;
 		 }
+
+		 body.lines {
+			 background-color:#323133;
+		 }
+
+		 body.lines:after {
+			 content: '';
+			 position: absolute;
+			 top:0px;
+			 left:0px;
+			 right:0px;
+			 bottom:0px;
+			 z-index:1000;
+			 background: repeating-linear-gradient(0deg, #111 0px, #111 1px, transparent 2px, transparent 5px);
+			 background-size:100% 5px;
+			 animation: lines 2s ease-out infinite;
+			 opacity:0.3;
+			 mix-blend-mode: color-burn;
+			 pointer-events: none;
+		 }
+
 
 		 p, li {
 			 font-family: sans-serif;
@@ -29,6 +51,10 @@
 			 flex-direction:colum;
 			 justify-content: center;
 			 align-items: center;
+		 }
+
+		 .lines .cover {
+			 background: none;
 		 }
 
 		 .cover h1 {
@@ -55,6 +81,15 @@
 		 .error-code {
 			 font-size: 12px;
 			 color:#646464;
+		 }
+
+		 @keyframes lines {
+			 0% {
+				 background-position:0px 0px;
+			 }
+			 100% {
+				 background-position:0px 25px;
+			 }
 		 }
 
 	 </style>
@@ -91,8 +126,12 @@
 	 <script>
 		 document.addEventListener('DOMContentLoaded', function(){
 
-//			var cover = document.querySelector(".cover");
-//			cover.classList.add('remove');
+			//var bodyTag = document.getElementsByTagName("body");
+
+//			 setTimeout(function(){
+//				 document.body.classList.add('lines');
+//			 }, 3000);
+
 
 		 }, false);
 	 </script>
