@@ -3,6 +3,7 @@
  <head>
   <meta charset="UTF-8">
   <title>Home Page</title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	 <style>
 		 body {
 			 background: #000;
@@ -27,6 +28,16 @@
 
 		 .container {
 			 text-align:center; margin-top:40px; max-width: 40vw;
+		 }
+
+		 @media only screen and (max-width: 600px) {
+			 .container {
+				 text-align:center; margin-top:40px; max-width: 90vw;
+			 }
+
+			 p span {
+				 font-size: 26px;
+			 }
 		 }
 	 </style>
  </head>
