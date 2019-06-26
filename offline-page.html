@@ -11,6 +11,11 @@
 			 /*min-height: 100vh;*/
 		 /*}*/
 
+		 @font-face {
+			 font-family: "Barrio";
+			 src: url("barrio-regular-webfont.woff2") format("woff2");
+		 }
+
 		 body {
 			 background: #000;
 			 display:flex; flex-direction: column; justify-content: center; align-items: center;
@@ -362,6 +367,60 @@
 			 }
 		 }
 
+		 /*joy*/
+		 .gradient-text {
+			 -webkit-transition: all 1s ease;
+			 -o-transition: all 1s ease;
+			 transition: all 1s ease;
+			 color: #FF1361;
+			 background-color: #FF1361;
+			 background: -o-linear-gradient(left, #FFF800 10% , #FF1361, #44107A, #7794ff);
+			 background: -webkit-linear-gradient(left, #FFF800 10% , #FF1361, #44107A, #7794ff);
+			 -webkit-background-clip: text;
+			 -moz-background-clip: text;
+			 -webkit-text-fill-color: transparent;
+			 background-clip: text;
+		 }
+
+		 .gradient-text.text1 {
+			 -webkit-animation: dancingColors 2s infinite forwards ease-in-out;
+			 animation: dancingColors 2s infinite forwards ease-in-out;
+			 margin: 20px 0;
+		 }
+		 .gradient-text.text2 {
+			 -webkit-animation: dancingColors 2s -0.5s infinite forwards ease-in-out;
+			 animation: dancingColors 2s -0.5s infinite forwards ease-in-out;
+		 }
+
+		 .gradient-text.text1 {
+			 font-size: 120px;
+			 /*font-size: calc(50px + (100 - 50) * (100vw - 400px) / (1000 - 400));*/
+			 font-family: 'Barrio', cursive;
+		 }
+
+
+		 @-webkit-keyframes dancingColors {
+			 50% {
+			 //  background: -webkit-linear-gradient(left, #FF1361, #44107A, #7794ff);
+				 -webkit-background-clip: text;
+				 -webkit-text-fill-color: transparent;
+				 background-clip: text;
+				 background-position: -860px;
+			 }
+		 }
+
+
+
+		 @keyframes dancingColors {
+			 50% {
+			 //  background: -webkit-linear-gradient(left, #FF1361, #44107A, #7794ff);
+				 -webkit-background-clip: text;
+				 -webkit-text-fill-color: transparent;
+				 background-clip: text;
+				 background-position: -860px;
+			 }
+		 }
+
 	 </style>
  </head>
  <body>
@@ -371,7 +430,8 @@
      <!--<p>How is this even possible?? Find out next time... (it's a lot harder than you'd think)</p>-->
    <!--</div>-->
    <div class="container">
-	   <p>Hi again.</p><p>You've gone offline but can still see this page. It actually worked.</p>
+	   <p>Hi again.</p><p>You've gone offline but can still see this page.</p>
+	   <p class="gradient-text text1">JOY!</p>
 	   <p><img src="sean.gif" /></p>
    </div>
  	<div class="cover flicker-out-1">
