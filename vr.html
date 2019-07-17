@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VR</title>
+	<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+	<script src="component.js"></script>
+</head>
+<body>
+	<a-scene>
+		<a-sky src="caltonhill.jpg" rotation="0 -130 0"></a-sky>
+
+		<a-text font="kelsonsans" value="Welcome to Edinburgh. Have a look around." width="6" position="-2.5 -1 -1.75"
+				rotation="0 15 0"></a-text>
+
+
+		<a-image position="0 0 -2.5" rotation="0 15 0" width="3" height="1" src="union-logo-grey.png"></a-image>
+
+		<a-sphere planet color="#a6b1a3" position="0 0 4" src="paul4.png" animation="property: rotation; from: 0 0 0; to: 0 360 0; loop: true; easing: linear; dur: 5000">
+			<a-image width="3" height="0.75" id="paul-text" src="paul-text2.png" position="0 1.5 0" look-at="[camera]"></a-image>
+		</a-sphere>
+
+		<a-entity camera look-controls>
+			<a-entity cursor="fuse: true; fuseTimeout: 500"
+					  position="0 0 -1"
+					  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+					  material="color: black; shader: flat">
+			</a-entity>
+		</a-entity>
+
+	</a-scene>
+
+
+
+</body>
+</html>
