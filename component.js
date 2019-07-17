@@ -1,6 +1,6 @@
-AFRAME.registerComponent('planet', {
+AFRAME.registerComponent('whatsyername', {
 	init: function(){
-		const image = document.getElementById('paul-text');
+		const image = this.el.querySelector('a-image');
 		image.setAttribute('visible','false');
 
 		this.el.addEventListener('mouseenter', function(){
